@@ -4,3 +4,5 @@ local.properties
 .iml
 .gradle
 .DS_Store
+app.iml
+android-unsplash.iml
