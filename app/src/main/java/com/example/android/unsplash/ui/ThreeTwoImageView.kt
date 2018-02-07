@@ -14,10 +14,18 @@
  * limitations under the License.
  */
 
-package com.example.android.unsplash.ui;
+package com.example.android.unsplash.ui
 
-public class ImageSize {
+import android.content.Context
+import android.util.AttributeSet
+import android.view.View
 
-    public static final int[] NORMAL = new int[] {480, 400};
-    public static final int[] LARGE = new int[] {960, 800};
+class ThreeTwoImageView(context: Context, attrs: AttributeSet) : ForegroundImageView(context, attrs) {
+
+    override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
+        val width = View.MeasureSpec.getSize(widthMeasureSpec)
+        val desiredHeight = width * 2 / 3
+        super.onMeasure(widthMeasureSpec,
+                View.MeasureSpec.makeMeasureSpec(desiredHeight, View.MeasureSpec.EXACTLY))
+    }
 }

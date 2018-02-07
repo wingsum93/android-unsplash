@@ -14,22 +14,10 @@
  * limitations under the License.
  */
 
-package com.example.android.unsplash.ui;
+package com.example.android.unsplash.ui.grid
 
-import android.content.Context;
-import android.util.AttributeSet;
+import android.support.v7.widget.RecyclerView
 
-public class ThreeTwoImageView extends ForegroundImageView {
+import com.example.android.unsplash.databinding.PhotoItemBinding
 
-    public ThreeTwoImageView(Context context, AttributeSet attrs) {
-        super(context, attrs);
-    }
-
-    @Override
-    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-        int width = MeasureSpec.getSize(widthMeasureSpec);
-        int desiredHeight = width * 2 / 3;
-        super.onMeasure(widthMeasureSpec,
-                MeasureSpec.makeMeasureSpec(desiredHeight, MeasureSpec.EXACTLY));
-    }
-}
+class PhotoViewHolder(val binding: PhotoItemBinding) : RecyclerView.ViewHolder(binding.root)

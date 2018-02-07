@@ -14,26 +14,24 @@
  * limitations under the License.
  */
 
-package com.example.android.unsplash.ui.grid;
+package com.example.android.unsplash.data
 
-import android.graphics.Rect;
-import android.support.v7.widget.RecyclerView;
-import android.view.View;
+import com.example.android.unsplash.data.model.Photo
 
-public class GridMarginDecoration extends RecyclerView.ItemDecoration {
+import retrofit.Callback
+import retrofit.http.GET
 
-    private int space;
+/**
+ * Modeling the unsplash.it API.
+ */
+interface UnsplashService {
 
-    public GridMarginDecoration(int space) {
-        this.space = space;
+    @GET("/list")
+    fun getFeed(callback: Callback<List<Photo>>)
+
+    companion object {
+
+        const val ENDPOINT = "https://unsplash.it"
     }
 
-    @Override
-    public void getItemOffsets(Rect outRect, View view,
-                               RecyclerView parent, RecyclerView.State state) {
-        outRect.left = space;
-        outRect.top = space;
-        outRect.right = space;
-        outRect.bottom = space;
-    }
 }

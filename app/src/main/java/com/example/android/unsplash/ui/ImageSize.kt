@@ -14,23 +14,11 @@
  * limitations under the License.
  */
 
-package com.example.android.unsplash.data;
+package com.example.android.unsplash.ui
 
-import com.example.android.unsplash.data.model.Photo;
-
-import java.util.List;
-
-import retrofit.Callback;
-import retrofit.http.GET;
-
-/**
- * Modeling the unsplash.it API.
- */
-public interface UnsplashService {
-
-    String ENDPOINT = "https://unsplash.it";
-
-    @GET("/list")
-    void getFeed(Callback<List<Photo>> callback);
-
+object ImageSize {
+    @JvmField
+    val NORMAL = intArrayOf(480, 400)
+    @JvmField
+    val LARGE = intArrayOf(960, 800)
 }

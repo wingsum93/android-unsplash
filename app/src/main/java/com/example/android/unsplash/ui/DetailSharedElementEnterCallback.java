@@ -43,7 +43,7 @@ public class DetailSharedElementEnterCallback extends SharedElementCallback {
                 author.getPaddingTop(),
                 author.getPaddingRight(),
                 author.getPaddingBottom());
-        if (IntentUtil.hasAll(intent,
+        if (IntentUtil.INSTANCE.hasAll(intent,
                 IntentUtil.TEXT_COLOR, IntentUtil.FONT_SIZE, IntentUtil.PADDING)) {
             author.setTextColor(intent.getIntExtra(IntentUtil.TEXT_COLOR, Color.BLACK));
             float textSize = intent.getFloatExtra(IntentUtil.FONT_SIZE, targetTextSize);
