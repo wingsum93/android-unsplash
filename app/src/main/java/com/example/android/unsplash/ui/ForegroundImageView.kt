@@ -37,8 +37,8 @@ open class ForegroundImageView(context: Context, attrs: AttributeSet) : ImageVie
         val a = context.obtainStyledAttributes(attrs, R.styleable.ForegroundView)
 
         val d = a.getDrawable(R.styleable.ForegroundView_android_foreground)
-        if (d != null) {
-            setForeground(d)
+        d?.also {
+            setForeground(it)
         }
         a.recycle()
         outlineProvider = ViewOutlineProvider.BOUNDS
